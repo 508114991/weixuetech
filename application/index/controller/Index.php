@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use think\Controller;
 use think\Db;
-use think\Request;
+//use think\Request;
 
 Class Index extends Controller
 {
@@ -14,10 +14,14 @@ Class Index extends Controller
     public function hello ($name = "jack") {
         return "hello - " . $name;
     }
-    public function rout (Request $request) {
+    public function rout () {
         echo "请求参数：";
-        p($request->param());
-        echo 'id:' . $request->param('id') . "<br>";
-        echo 'name:' . $request->param('name');
+        p(input());
+        echo 'id:' . input('id') . "<br>";
+        echo 'name:' .input('name');
+    }
+    public function inputJson () {
+        $arr = ["name"=>"thinkphp", "age"=>"15"];
+        return json($arr);
     }
 }
