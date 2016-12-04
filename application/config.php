@@ -16,7 +16,7 @@ return [
 
     // 应用命名空间
     'app_namespace'          => 'app',
-    // 应用调试模式
+    // 应用调试模式（上线后，记得关掉）
     'app_debug'              => true,
     // 应用Trace
     'app_trace'              => false,
