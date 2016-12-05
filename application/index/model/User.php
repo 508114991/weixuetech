@@ -9,8 +9,9 @@ namespace app\index\model;
 use think\Model;
 
 Class User extends Model {
-    //birthday读取器
-    protected function getBirthdayAttr($birthday){
-        return date("Y-m-d", $birthday);
-    }
+    protected $dateFormat = 'Y/m/d';
+    protected $type       = [
+        // 设置birthday为时间戳类型（整型）
+        'birthday' => 'timestamp',
+    ];
 }
