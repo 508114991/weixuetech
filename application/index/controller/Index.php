@@ -24,4 +24,27 @@ Class Index extends Controller
         $arr = ["name"=>"thinkphp", "age"=>"15"];
         return json($arr);
     }
+    public function insertData () {
+        $res = Db::name('test')
+                ->insert(["id"=>'', "data"=>"YII"]);
+        if($res){
+           return "success";
+        }
+    }
+    public function deleteData () {
+        $data = db('test')->where('id', 9)->delete();
+        if($data){
+            return "success11";
+        }
+    }
+    public function findData(){
+        $data = db('test')->where('id', 2)->find();
+        p($data);
+    }
+    public function selectData(){
+        $data = db('test')->where('id', 'EGT', 2)->select();
+        p($data);
+    }
+
+
 }
